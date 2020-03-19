@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { withFormik, Form, Field } from "formik";
 
-const Information = ({ data, changeDate, status, darkMode }) => {
+const Information = ({ data, changeDate, status }) => {
   const { copyright, date, explanation, title, url } = data;
 
   useEffect(() => {
@@ -12,18 +12,12 @@ const Information = ({ data, changeDate, status, darkMode }) => {
     <div className="info-container">
       <FormCard>
         <Form>
-          <Field
-            component="select"
-            name="dates"
-            className={darkMode ? "values dark-mode-btn" : "values"}
-          >
+          <Field component="select" name="dates" className="values">
             <option value="2000-02-14">2000-02-14</option>
             <option value="2010-02-24">2010-02-24</option>
             <option value="2006-11-01">2006-11-01</option>
           </Field>
-          <Btn type="submit" className={darkMode ? "dark-mode-btn" : null}>
-            Submit
-          </Btn>
+          <Btn type="submit">Submit</Btn>
         </Form>
       </FormCard>
       <InfoCard className="card-container">
@@ -89,11 +83,12 @@ export const Btn = styled.button`
   display: inline-block;
   border: none;
   outline: none;
-  background: #333;
-  color: #f4f4f4;
+  background: #edeaea;
+  color: #222;
   margin-left: 1rem;
   border-radius: 5px;
   font-size: 1rem;
   padding: 0.2rem 1rem;
   cursor: pointer;
+  border: 1px solid #f4f4f4;
 `;

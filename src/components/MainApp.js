@@ -32,18 +32,14 @@ const MainApp = () => {
       <ToggleBg>
         <ToggleBtn
           onClick={toggleTheme}
-          className={darkMode ? "dark-mode-btn" : null}
+          className={darkMode ? "dark-mode-btn" : ""}
         >
           {darkMode ? "light" : "dark"}
         </ToggleBtn>
       </ToggleBg>
       <Parent>
         {isLoaded ? (
-          <Information
-            data={data}
-            changeDate={changeDate}
-            darkMode={darkMode}
-          />
+          <Information data={data} changeDate={changeDate} />
         ) : (
           <h1>Loading...</h1>
         )}

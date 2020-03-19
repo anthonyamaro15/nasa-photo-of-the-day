@@ -8,23 +8,24 @@ input {
   display: inline-block;
   outline: none;
   cursor: pointer;
-  background: #333;
+  background: #edeaea;
   padding: 0.5rem 0;
 
-  color: #f4f4f4;
+  color: #222;
   border: none;
 }
 
 .container {
   height: 100vh;
+  transition: all 0.5s ease-in-out;
 }
 
 .dark-mode {
-  background: #333;
+  background: #222;
   color: white;
 }
 
 .dark-mode-btn {
   background: #f4f4f4;
-  color: #333;
+  color: #222;
 }
