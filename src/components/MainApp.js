@@ -16,7 +16,7 @@ const MainApp = () => {
       .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`)
       .then(res => {
         setData(res.data);
-        //   setIsLoaded(true);
+        setIsLoaded(true);
       })
       .catch(err => console.log(err));
   }, [date]);
