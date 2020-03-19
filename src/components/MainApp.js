@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import Information from "./Information";
 import axios from "axios";
 
@@ -21,16 +22,23 @@ const MainApp = () => {
   const changeDate = dateInfo => {
     setDate(dateInfo.dates);
   };
-
   return (
-    <div>
+    <Parent>
       {isLoaded ? (
         <Information data={data} changeDate={changeDate} />
       ) : (
         <h1>Loading...</h1>
       )}
-    </div>
+    </Parent>
   );
 };
 
 export default MainApp;
+
+const Parent = styled.div`
+  max-width: 800px;
+  margin: 2rem auto 0;
+  border-radius: 5px;
+  padding: 2rem 0;
+  box-shadow: -1px -1px 14px 0px rgba(94, 87, 94, 0.78);
+`;
