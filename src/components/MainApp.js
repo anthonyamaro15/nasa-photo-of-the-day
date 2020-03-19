@@ -16,7 +16,7 @@ const MainApp = () => {
       .get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`)
       .then(res => {
         setData(res.data);
-        setIsLoaded(true);
+        //   setIsLoaded(true);
       })
       .catch(err => console.log(err));
   }, [date]);
@@ -41,7 +41,7 @@ const MainApp = () => {
         {isLoaded ? (
           <Information data={data} changeDate={changeDate} />
         ) : (
-          <h1>Loading...</h1>
+          <Loading>Loading...</Loading>
         )}
       </Parent>
     </div>
@@ -64,4 +64,8 @@ const ToggleBg = styled.div`
 
 const ToggleBtn = styled(Btn)`
   font-size: 0.7rem;
+`;
+
+const Loading = styled.h1`
+  text-align: center;
 `;
