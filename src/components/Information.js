@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
-import * as yup from "yup";
 
-const Information = ({ data, changeDate }, { status }) => {
+const Information = ({ data, changeDate, status }) => {
   const { copyright, date, explanation, title, url } = data;
 
   useEffect(() => {
     status && changeDate(status);
-    console.log(status);
-  }, [status]);
-
+  }, [status, changeDate]);
   return (
     <div className="container">
       <Form>
@@ -22,7 +19,7 @@ const Information = ({ data, changeDate }, { status }) => {
       </Form>
       <div className="card-container">
         <h1>{title}</h1>
-        <img src={url} />
+        <img src={url} alt={title} />
         <p className="desc">{explanation}</p>
         <span className="date">{date}</span>
         <span className="copyright">{copyright}</span>
@@ -36,7 +33,6 @@ export default withFormik({
     dates: ""
   }),
   handleSubmit: (values, { resetForm, setStatus }) => {
-    //  console.log(values);
     setStatus(values);
     resetForm();
   }

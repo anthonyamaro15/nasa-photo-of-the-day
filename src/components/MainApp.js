@@ -19,8 +19,7 @@ const MainApp = () => {
   }, [date]);
 
   const changeDate = dateInfo => {
-    setDate(dateInfo);
-    console.log("new date", dateInfo);
+    setDate(dateInfo.dates);
   };
 
   return (
