@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Information from "./Information";
+import CircularProgress from "@material-ui/core/CircularProgress";
+
 import { Btn } from "./Information";
 import axios from "axios";
 
@@ -41,7 +43,10 @@ const MainApp = () => {
         {isLoaded ? (
           <Information data={data} changeDate={changeDate} />
         ) : (
-          <Loading>Loading...</Loading>
+          <Loading>
+            Loading
+            <CircularProgress />
+          </Loading>
         )}
       </Parent>
     </div>
@@ -68,4 +73,8 @@ const ToggleBtn = styled(Btn)`
 
 const Loading = styled.h1`
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
